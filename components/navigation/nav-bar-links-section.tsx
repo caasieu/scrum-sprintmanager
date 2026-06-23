@@ -16,7 +16,7 @@ export function NavBarLinksSection({
   routes: Array<RouteLinkType>;
 }) {
   return (
-    <div className="flex flex-col gap-2 border-b border-app-border px-3 py-3">
+    <div className="flex flex-col gap-2 px-3 py-3">
       <Link href={path}>
         <div className="flex items-center gap-2">
           <span className="font-semibold text-sm">{label}</span>

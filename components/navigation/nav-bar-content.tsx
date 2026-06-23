@@ -1,6 +1,5 @@
 import { ThemeToggle } from "@/components/theme-toggle";
 import { AccountCard } from "../users/account-card";
-import { NavButton } from "./nav-button";
 import { AppLogo } from "@/components/app-logo";
 import { AppLogoutButton } from "@/components/app-logout-button";
 import { NavBarLinksSection } from "./nav-bar-links-section";
@@ -39,8 +38,10 @@ export function NavBarContent() {
           </div>
 
           <div className="flex flex-col gap-2 text-xs ">
-            <ThemeToggle />
-            <AppLogoutButton />
+            <div className="flex items-center gap-2 bg-app-surface border border-app-border p-3 rounded-sm">
+              <ThemeToggle />
+              <AppLogoutButton />
+            </div>
           </div>
         </div>
       </div>

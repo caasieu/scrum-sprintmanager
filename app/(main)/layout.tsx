@@ -1,6 +1,6 @@
 "use client";
 
-import { NavBarContainer } from "./components/navigation/nav-bar-container";
+import { NavBarContainer } from "../../components/navigation/nav-bar-container";
 
 export default function AuthLayout({
   children,
