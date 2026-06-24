@@ -3,6 +3,25 @@ openapi: 3.1.0
 info:
   title: Scrum Sprintmanager API
   version: 1.0.0
+  summary: Agile sprint and task management platform
+  description: |
+    Scrum Sprint Manager API allows teams to manage members,
+    sprints, tasks, and agile workflows.
+
+tags:
+  - name: Authentication
+    description: Authentication and session management
+  - name: Users
+    description: User profile management
+  - name: Teams
+    description: Team management operations
+  - name: Sprints
+    description: Sprint lifecycle management
+  - name: Tasks
+    description: Task management operations
+
+security:
+  - bearerAuth: []
 
 paths:
   /api/teams:
