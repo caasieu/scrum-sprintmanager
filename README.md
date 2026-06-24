@@ -31,7 +31,7 @@ To run the docker image simply do (Unix):
 
 ```bash
 `
-# to copy your copy the example env file and fill with your credentials
+# copy the .env.example file and fill it with your credentials
 cp .env.example .env
 
 # then
