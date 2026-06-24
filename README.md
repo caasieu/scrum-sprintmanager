@@ -1,25 +1,36 @@
 # Scrum Sprintmanager
 
-A simple webapp for managing sprints when applying agile methods with scrum.
+A simple webapp for allowing teams to manage sprints when applying agile worflows with scrum.
 
 ### Archithecture 
 
-Frontend:
-- NextJS
+**Frontend**:
+- NextJS 14
 - Typescript
+- TailwindCSS
 
-Backend:
-- NextJS API Routes
-
-Database:
-- PostgreSQL
+**Backend**:
+- NextJS Routes Handlers
+- Server Actions
 - Prisma ORM
 
-Infrascture:
-- Docker
+**Database**:
+- PostgreSQL
+
+**Authentication**:
+- NextAuth/Auth.js
+
+**CI/CD**:
 - Github Actions
 
-Future Scalability:
+**Containerization**:
+- Docker
+
+**Deployment**:
+- Vercel
+- PostgreSQL (Supabase)
+
+**Future Scalability**:
 - Redis Caching
 - API Gateway
 - Load Balancing
