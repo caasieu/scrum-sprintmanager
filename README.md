@@ -41,7 +41,7 @@ A simple webapp for allowing teams to manage sprints when applying agile worflow
 To run the docker image simply do (Unix):
 
 ```bash
-`
+
 # copy the .env.example file and fill it with your credentials
 cp .env.example .env
 
@@ -52,5 +52,5 @@ docker compose up --build
 Additionally, if you prefer you can run the development server:
 
 ```bash
-`pnpm dev
+pnpm dev
 ```
