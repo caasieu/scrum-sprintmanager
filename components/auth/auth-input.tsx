@@ -23,7 +23,7 @@ export function AuthInput<T extends FieldValues>({
         id={name}
         type={type}
         placeholder={placeholder}
-        className="w-full p-2 text-xs font-sans font-medium text-gray-800 placeholder-gray-400 bg-transparent outline-none focus:outline-none focus:ring-0 border-0"
+        className="w-full p-2 text-xs font-sans font-medium text-app-text placeholder-app-text/40 bg-transparent outline-none focus:outline-none focus:ring-0 border-0"
         {...register(name)}
       />
     </div>

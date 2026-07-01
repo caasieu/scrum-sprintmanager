@@ -10,7 +10,7 @@ import { useState } from "react";
 export function AuthRegisterForm() {
   const router = useRouter();
   const { register, handleSubmit, reset } = useForm<AuthFormData>();
-  
+
   // 1. Core interaction state parameters
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
@@ -33,7 +33,10 @@ export function AuthRegisterForm() {
       const result = await res.json().catch(() => ({}));
 
       if (!res.ok) {
-        throw new Error(result.error || "Failed to create account. Please verify input data fields.");
+        throw new Error(
+          result.error ||
+            "Failed to create account. Please verify input data fields.",
+        );
       }
 
       reset();
@@ -41,7 +44,11 @@ export function AuthRegisterForm() {
       router.push("/auth/signin");
     } catch (error: unknown) {
       console.error("Registration workflow failure status:", error);
-      setErrorMessage(error instanceof Error ? error.message : "An unexpected server error occurred.");
+      setErrorMessage(
+        error instanceof Error
+          ? error.message
+          : "An unexpected server error occurred.",
+      );
     } finally {
       setIsSubmitting(false);
     }
@@ -50,10 +57,9 @@ export function AuthRegisterForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div className="flex flex-col gap-2">
-        
         {/* Dynamic Error Status Alert Banner */}
         {errorMessage && (
-          <div className="p-2.5 mb-1 text-[11px] font-mono font-medium border border-red-200 text-red-600 bg-red-50/50 rounded-sm leading-relaxed">
+          <div className="p-2.5 mb-1 text-[11px] font-mono font-medium border border-danger/20 text-danger bg-danger/5 rounded-sm leading-relaxed">
             ⚠️ {errorMessage}
           </div>
         )}
@@ -64,7 +70,7 @@ export function AuthRegisterForm() {
           placeholder="First Name"
           register={register}
         />
-        
+
         <AuthInput<AuthFormData>
           name="lastName"
           type="text"
@@ -94,7 +100,9 @@ export function AuthRegisterForm() {
         />
 
         {/* Dynamic loading label text prevents submission spam during network roundtrips */}
-        <AuthSubmitButton label={isSubmitting ? "Creating profile accounts..." : "Sign me up!"} />
+        <AuthSubmitButton
+          label={isSubmitting ? "Creating profile accounts..." : "Sign me up!"}
+        />
       </div>
     </form>
   );

@@ -31,5 +31,6 @@ export function AuthSubmitButton({ label }: { label: string }) {
         )}
       </button>
     </div>
+
   );
 }

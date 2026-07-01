@@ -6,7 +6,6 @@ export default function SignIn() {
   return (
     <div className="flex flex-col justify-between gap-12 h-full w-full sm:w-[20rem] text-xs font-sans text-app-text bg-app-bg transition-colors">
       
-      {/* SECTION 1: Top Navigation Utilities Utility Deck */}
       <div className="flex flex-row justify-between items-baseline w-full select-none pt-2">
         <div className="shrink-0">
           {/* Integrated your safe back navigation component button element natively */}
