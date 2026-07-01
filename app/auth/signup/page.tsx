@@ -1,45 +1,47 @@
-'use client'
+"use client";
 
 import { AuthRegisterForm } from "@/components/auth/auth-register-form";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { NavBackButton } from "@/components/navigation/nav-back-button";
 
 export default function SignUp() {
-  const router = useRouter();
-  const handleGoBack = () => router.back();
-
   return (
-    <div className="flex flex-col justify-between gap-20 h-full w-full sm:w-[20rem] text-xs">
-      <div className="flex flex-row justify-between items-center w-full">
+    <div className="flex flex-col justify-between gap-20 h-full w-full sm:w-[20rem] text-xs text-app-text bg-app-bg transition-colors">
+      {/* 1. Navigation Header Row */}
+      <div className="flex flex-row justify-between items-baseline w-full select-none pt-2">
         <div className="">
-          <button
-            onClick={handleGoBack}
-            className="bg-app-surface border-app-border border-1 rounded-sm h-[2rem] w-[2rem]"
-          >
-            <i className="pi pi-chevron-left" style={{ fontSize: "10pt" }}></i>
-            <span> {"<"} </span>
-          </button>
+          {/* Replaced the duplicate icon button with your unified back component */}
+          <NavBackButton />
         </div>
 
-        <div className="">
+        <div className="text-[11px] text-app-text/50 font-medium text-right">
           <span>
-            Already have an account?
-            <Link href="/auth/signin">
-              <span className="underline text-primary"> Signin. </span>
+            Already have an account?{" "}
+            <Link
+              href="/auth/signin"
+              className="underline text-app-primary font-bold hover:opacity-80 transition-opacity"
+            >
+              Signin.
             </Link>
           </span>
         </div>
       </div>
 
+      {/* 2. Registration Header & Form Canvas */}
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col">
-          <h1 className="text-2xl font-semibold"> {"Let's create you an account."}  </h1>
-          <span> Fill out the fields with your information!  </span>
+        <div className="flex flex-col gap-1">
+          <h1 className="text-xl font-bold text-app-text tracking-tight">
+            {"Let's create you an account."}
+          </h1>
+          <p className="text-app-text/60 font-normal leading-relaxed">
+            Fill out the fields with your information!
+          </p>
         </div>
 
         <AuthRegisterForm />
       </div>
 
+      {/* 3. Empty bottom balancer node preserves your exact flex split spacing */}
       <div></div>
     </div>
   );
